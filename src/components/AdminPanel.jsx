@@ -23,7 +23,7 @@ function UserTable() {
   const fetchUsers = async () => {
     try {
       let response = await fetch(
-        "https://moneyversebackend-production.up.railway.app/api/users"
+        "https://moneyversebackend-production.up.railway.app/api/v1/users"
       ); // Replace with actual API
       let data = await response.json();
       setUsers(
@@ -61,7 +61,7 @@ function UserTable() {
       "Are you sure you want to edit this user?",
       async () => {
         await fetch(
-          `https://moneyversebackend-production.up.railway.app/api/users/${user.id}`,
+          `https://moneyversebackend-production.up.railway.app/api/v1/users/${user.id}`,
           {
             method: "POST",
             headers: {
@@ -87,7 +87,7 @@ function UserTable() {
       "Are you sure you want to Active or Inactive this user?",
       async () => {
         await fetch(
-          `https://moneyversebackend-production.up.railway.app/api/users/${id}`
+          `https://moneyversebackend-production.up.railway.app/api/v1/users/${id}`
         );
         fetchUsers();
       },

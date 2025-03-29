@@ -12,7 +12,7 @@ function Withdraw() {
   const fetchUsers = async () => {
     try {
       let response = await fetch(
-        "https://moneyversebackend-production.up.railway.app/api/transactions",
+        "https://moneyversebackend-production.up.railway.app/api/v1/transactions",
         {
           headers: {
             "Content-Type": "application/json",
@@ -40,7 +40,7 @@ function Withdraw() {
   const updateStatus = async (userId, newStatus) => {
     try {
       await fetch(
-        `https://moneyversebackend-production.up.railway.app/api/transactions/${userId}/status`,
+        `https://moneyversebackend-production.up.railway.app/api/v1/transactions/${userId}/status`,
         {
           method: "POST",
           headers: {
