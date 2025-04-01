@@ -4,6 +4,8 @@ import "./AdminPanel.css";
 function Withdraw() {
   const [users, setUsers] = useState([]);
   const [search, setSearch] = useState("");
+  // const [tocken, setTocken] = useState("");
+  
 
   useEffect(() => {
     fetchUsers();
@@ -16,7 +18,7 @@ function Withdraw() {
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInVzZXJuYW1lIjoiQWFrYXNoIiwiaWF0IjoxNzQyOTI2OTgxLCJleHAiOjE3NDM1MzE3ODF9.jn3L-cm1Z1YZ2EdRKVg4IyUtiygefBcq3y9K6p6j9wM`,
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiQXJhdmluZGhhbiIsImlhdCI6MTc0MzUzNTI0MiwiZXhwIjoxNzQ0MTQwMDQyfQ.B3ZbUaplxQiMMBFYaqGLpwInbcNDJvvB9T_RzcJc1NA`,
           },
         }
       ); // Replace with actual API
@@ -45,7 +47,7 @@ function Withdraw() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInVzZXJuYW1lIjoiQWFrYXNoIiwiaWF0IjoxNzQyOTI2OTgxLCJleHAiOjE3NDM1MzE3ODF9.jn3L-cm1Z1YZ2EdRKVg4IyUtiygefBcq3y9K6p6j9wM`,
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiQXJhdmluZGhhbiIsImlhdCI6MTc0MzUzNTI0MiwiZXhwIjoxNzQ0MTQwMDQyfQ.B3ZbUaplxQiMMBFYaqGLpwInbcNDJvvB9T_RzcJc1NA`,
           },
           body: JSON.stringify({ status: newStatus }),
         }
@@ -65,6 +67,7 @@ function Withdraw() {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
+      {/* <input type="text" placeholder="Tocken" value={tocken} onChange={(e) => setTocken(e.target.value)}/>  */}
       <table border="1">
         <thead>
           <tr>
