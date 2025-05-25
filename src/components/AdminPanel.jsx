@@ -23,7 +23,7 @@ function UserTable() {
   const fetchUsers = async () => {
     try {
       let response = await fetch(
-        "https://moneyversebackend-production.up.railway.app/api/v1/users"
+        "https://moneyversebackends.onrender.com/api/v1/users"
       ); // Replace with actual API
       let data = await response.json();
       setUsers(
@@ -61,12 +61,11 @@ function UserTable() {
       "Are you sure you want to edit this user?",
       async () => {
         await fetch(
-          `https://moneyversebackend-production.up.railway.app/api/v1/users/${user.id}`,
+          `https://moneyversebackends.onrender.com/api/v1/users/${user.id}`,
           {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              Authorization:`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInVzZXJuYW1lIjoiQWFrYXNoIiwiaWF0IjoxNzQyOTI2OTgxLCJleHAiOjE3NDM1MzE3ODF9.jn3L-cm1Z1YZ2EdRKVg4IyUtiygefBcq3y9K6p6j9wM`
             },
             body: JSON.stringify({
               username: editedUser.username,

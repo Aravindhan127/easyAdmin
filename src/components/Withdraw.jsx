@@ -14,11 +14,10 @@ function Withdraw() {
   const fetchUsers = async () => {
     try {
       let response = await fetch(
-        "https://moneyversebackend-production.up.railway.app/api/v1/transactions",
+        "https://moneyversebackends.onrender.com/api/v1/transactions",
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiQXJhdmluZGhhbiIsImlhdCI6MTc0MzUzNTI0MiwiZXhwIjoxNzQ0MTQwMDQyfQ.B3ZbUaplxQiMMBFYaqGLpwInbcNDJvvB9T_RzcJc1NA`,
           },
         }
       ); // Replace with actual API
@@ -42,12 +41,11 @@ function Withdraw() {
   const updateStatus = async (userId, newStatus) => {
     try {
       await fetch(
-        `https://moneyversebackend-production.up.railway.app/api/v1/transactions/${userId}/status`,
+        `https://moneyversebackends.onrender.com/api/v1/transactions/${userId}/status`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiQXJhdmluZGhhbiIsImlhdCI6MTc0MzUzNTI0MiwiZXhwIjoxNzQ0MTQwMDQyfQ.B3ZbUaplxQiMMBFYaqGLpwInbcNDJvvB9T_RzcJc1NA`,
           },
           body: JSON.stringify({ status: newStatus }),
         }
