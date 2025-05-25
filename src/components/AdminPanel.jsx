@@ -86,7 +86,7 @@ function UserTable() {
       "Are you sure you want to Active or Inactive this user?",
       async () => {
         await fetch(
-          `https://moneyversebackend-production.up.railway.app/api/v1/users/${id}`
+          `https://moneyversebackends.onrender.com/api/v1/users/${id}`
         );
         fetchUsers();
       },
